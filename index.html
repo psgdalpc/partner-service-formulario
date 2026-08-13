@@ -1544,18 +1544,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         ubigeo: String(item.ubigeo)
       })),
       provincias: (provData.ubigeo_provincias || []).map(item => ({
-        id: String(item.id),
-        nombre: String(item.nombre),
-        ubigeo: String(item.ubigeo),
-        departamento_id: String(item.departamento_id)
-      })),
+  id: String(item.id),
+  nombre: String(item.provincia),
+  ubigeo: String(item.ubigeo),
+  departamento_id: String(item.departamento_id)
+})),
       distritos: (distData.ubigeo_distritos || []).map(item => ({
-        id: String(item.id),
-        nombre: String(item.nombre),
-        ubigeo: String(item.ubigeo),
-        provincia_id: String(item.nombre_id),
-        departamento_id: String(item.departamento_id)
-      }))
+  id: String(item.id),
+  nombre: String(item.distrito),
+  ubigeo: String(item.ubigeo),
+  provincia_id: String(item.provincia_id),
+  departamento_id: String(item.departamento_id)
+}))
     };
 
     cargarDepartamentos();
