@@ -1544,18 +1544,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         ubigeo: String(item.ubigeo)
       })),
       provincias: (provData.ubigeo_provincias || []).map(item => ({
-  id: String(item.id),
-  nombre: String(item.provincia),
-  ubigeo: String(item.ubigeo),
-  departamento_id: String(item.departamento_id)
-})),
+        id: String(item.id),
+        nombre: String(item.provincia),
+        ubigeo: String(item.ubigeo),
+        departamento_id: String(item.departamento_id)
+      })),
       distritos: (distData.ubigeo_distritos || []).map(item => ({
-  id: String(item.id),
-  nombre: String(item.distrito),
-  ubigeo: String(item.ubigeo),
-  provincia_id: String(item.provincia_id),
-  departamento_id: String(item.departamento_id)
-}))
+        id: String(item.id),
+        nombre: String(item.distrito),
+        ubigeo: String(item.ubigeo),
+        provincia_id: String(item.provincia_id),
+        departamento_id: String(item.departamento_id)
+      }))
     };
 
     cargarDepartamentos();
@@ -1838,7 +1838,11 @@ function cargarProvincias() {
     }
   );
 
-  provincia.disabled = false;
+  provincia.disabled = lista.length === 0;
+
+  if (lista.length === 0) {
+    provincia.innerHTML = '<option value="">No hay provincias disponibles</option>';
+  }
 
 }
 
@@ -1854,22 +1858,12 @@ function cargarDistritos() {
     document
       .getElementById('distrito');
 
-
   distrito.innerHTML =
     '<option value="">Selecciona tu distrito</option>';
 
   distrito.disabled = true;
 
-
-  if(!provinciaId) {
-
-    distrito.innerHTML =
-      '<option value="">Primero selecciona provincia</option>';
-
-    return;
-
-  }
-
+  if(!provinciaId) return;
 
   const lista =
     ubicacion.distritos
@@ -1880,42 +1874,27 @@ function cargarDistritos() {
           String(provinciaId)
       );
 
-
   lista.forEach(
     item => {
 
       const option =
         document.createElement('option');
 
-
       option.value =
         item.id;
-
 
       option.textContent =
         item.nombre;
 
-
-      distrito.appendChild(
-        option
-      );
+      distrito.appendChild(option);
 
     }
   );
 
-
-  if(lista.length > 0) {
-
-    distrito.disabled = false;
-
-  } else {
-
-    distrito.innerHTML =
-      '<option value="">No hay distritos disponibles</option>';
-
-  }
+  distrito.disabled = false;
 
 }
+
 
 
 /* =====================================================
