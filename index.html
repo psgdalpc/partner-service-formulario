@@ -1854,21 +1854,32 @@ function cargarDistritos() {
     document
       .getElementById('distrito');
 
+
   distrito.innerHTML =
     '<option value="">Selecciona tu distrito</option>';
 
   distrito.disabled = true;
 
-  if(!provinciaId) return;
+
+  if(!provinciaId) {
+
+    distrito.innerHTML =
+      '<option value="">Primero selecciona provincia</option>';
+
+    return;
+
+  }
+
 
   const lista =
     ubicacion.distritos
       .filter(
         item =>
-          String(item.nombre_id)
+          String(item.provincia_id)
           ===
           String(provinciaId)
       );
+
 
   lista.forEach(
     item => {
@@ -1876,21 +1887,35 @@ function cargarDistritos() {
       const option =
         document.createElement('option');
 
+
       option.value =
         item.id;
+
 
       option.textContent =
         item.nombre;
 
-      distrito.appendChild(option);
+
+      distrito.appendChild(
+        option
+      );
 
     }
   );
 
-  distrito.disabled = false;
+
+  if(lista.length > 0) {
+
+    distrito.disabled = false;
+
+  } else {
+
+    distrito.innerHTML =
+      '<option value="">No hay distritos disponibles</option>';
+
+  }
 
 }
-
 
 
 /* =====================================================
