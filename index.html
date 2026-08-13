@@ -2315,35 +2315,42 @@ function enviarFormulario() {
     'block';
 
 
-  fetch(BACKEND_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'text/plain;charset=UTF-8'
-    },
-    body: JSON.stringify(datos),
-    keepalive: true
-  })
-  .then(function() {
-    document
-      .getElementById('spinner')
-      .style.display = 'none';
-
-    mostrarExito();
-  })
-  .catch(function(error) {
-    document
-      .getElementById('spinner')
-      .style.display = 'none';
-
-    console.error('ERROR ENVIANDO POSTULACIÓN:', error);
-
-    alert('No se pudo enviar la postulación. Revisa tu conexión e inténtalo nuevamente.');
-  });
+  enviarDatosAlBackend(datos);
 
 }
 
 
+
+
+function enviarDatosAlBackend(datos) {
+
+  const formulario = document.createElement('form');
+
+  formulario.method = 'POST';
+  formulario.action = BACKEND_URL;
+  formulario.target = 'backendFrame';
+  formulario.style.display = 'none';
+
+  const campo = document.createElement('input');
+
+  campo.type = 'hidden';
+  campo.name = 'payload';
+  campo.value = JSON.stringify(datos);
+
+  formulario.appendChild(campo);
+  document.body.appendChild(formulario);
+
+  formulario.submit();
+
+  setTimeout(function() {
+    formulario.remove();
+
+    document.getElementById('spinner').style.display = 'none';
+
+    mostrarExito();
+  }, 1800);
+
+}
 
 /* =====================================================
    FUNCIONES AUXILIARES
@@ -2404,6 +2411,8 @@ function mostrarExito() {
 }
 
 </script>
+
+<iframe name="backendFrame" id="backendFrame" style="display:none;"></iframe>
 
 </body>
 
