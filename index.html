@@ -1,0 +1,2406 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Formulario de Postulación - Partner Service</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7f8;
+  color: #243238;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  min-height: 230px;
+  background: linear-gradient(
+    135deg,
+    #073f45,
+    #0d6268
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-align: center;
+  padding: 35px;
+}
+
+.banner h1 {
+  font-size: 30px;
+  margin: 0 0 15px;
+}
+
+.banner p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.content {
+  padding: 35px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-title {
+  color: #07565c;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  color: #66777c;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.question {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #e4512b;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cbd5d8;
+  border-radius: 9px;
+  font-size: 15px;
+  background: white;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #08747a;
+  box-shadow: 0 0 0 3px rgba(8,116,122,.12);
+}
+
+.help {
+  color: #69797d;
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 13px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #f47a35;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e7eeee;
+  color: #254146;
+}
+
+.btn-primary:hover {
+  background: #df6120;
+}
+
+.progress {
+  height: 7px;
+  background: #e5eeee;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #f47a35;
+  transition: width .3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.info-box {
+  background: #edf7f7;
+  border-left: 4px solid #08747a;
+  padding: 15px;
+  border-radius: 7px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.warning-box {
+  background: #fff7ed;
+  border-left: 4px solid #f47a35;
+  padding: 15px;
+  border-radius: 7px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.success {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.success h2 {
+  color: #08747a;
+}
+
+.spinner {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media(max-width:600px) {
+
+  .container {
+    padding: 8px;
+  }
+
+  .content {
+    padding: 22px 18px;
+  }
+
+  .banner {
+    min-height: 250px;
+    padding: 25px 18px;
+  }
+
+  .banner h1 {
+    font-size: 24px;
+  }
+
+  .buttons {
+    flex-direction: column-reverse;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+
+<!-- ================= PORTADA ================= -->
+
+<section id="portada" class="section active">
+
+<div class="banner">
+
+<div>
+
+<h1>FORMULARIO DE POSTULACIÓN<br>PARTNER SERVICE</h1>
+
+<p>
+¡Bienvenido/a al proceso de selección de Partner Service!
+</p>
+
+</div>
+
+</div>
+
+
+<div class="content">
+
+<div class="info-box">
+
+<strong>📢 ¡Bienvenido/a!</strong>
+
+<br><br>
+
+Por favor, complete este formulario con información verídica.
+Los datos proporcionados serán tratados de forma confidencial
+y utilizados únicamente con fines de selección.
+
+<br><br>
+
+🔸 <strong>Tiempo estimado de llenado:</strong> 5 minutos.
+
+<br>
+
+🔸 <strong>IMPORTANTE:</strong>
+Revisa que todos tus datos sean correctos antes de enviarlo.
+
+</div>
+
+
+<div class="buttons">
+
+<button class="btn-primary"
+        onclick="mostrarSeccion(1)">
+COMENZAR POSTULACIÓN
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= DATOS PERSONALES ================= -->
+
+<section id="seccion1" class="section">
+
+<div class="content">
+
+<div class="progress">
+<div class="progress-bar" id="progress1"></div>
+</div>
+
+<h2 class="section-title">
+DATOS PERSONALES
+</h2>
+
+<div class="question">
+
+<label>
+TIPO DE DOCUMENTO DE IDENTIDAD
+<span class="required">*</span>
+</label>
+
+<select id="tipoDocumento" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>DNI</option>
+
+<option>C.E.</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+NÚMERO DE DOCUMENTO DE IDENTIDAD
+<span class="required">*</span>
+</label>
+
+<input
+type="text"
+id="numeroDocumento"
+required
+maxlength="15"
+placeholder="Ingresa tu número de documento">
+
+</div>
+
+
+<div class="question">
+
+<label>
+APELLIDOS Y NOMBRES COMPLETOS
+<span class="required">*</span>
+</label>
+
+<input
+type="text"
+id="nombres"
+required
+placeholder="Ingresa tus apellidos y nombres">
+
+</div>
+
+
+<div class="question">
+
+<label>
+FECHA DE NACIMIENTO
+<span class="required">*</span>
+</label>
+
+<input
+type="date"
+id="fechaNacimiento"
+required
+onchange="calcularEdad()">
+
+</div>
+
+
+<div class="question">
+
+<label>
+EDAD
+<span class="required">*</span>
+</label>
+
+<input
+type="number"
+id="edad"
+readonly
+required
+placeholder="Se calculará automáticamente">
+
+</div>
+
+
+<div class="question">
+
+<label>
+SEXO
+<span class="required">*</span>
+</label>
+
+<select
+id="sexo"
+required
+onchange="controlarSexo()">
+
+<option value="">Selecciona una opción</option>
+
+<option>FEMENINO</option>
+
+<option>MASCULINO</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(0)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(1)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= RESIDENCIA ================= -->
+
+<section id="seccion2" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+DATOS DE RESIDENCIA
+</h2>
+
+<p class="section-description">
+Selecciona tu ubicación actual. Las opciones de provincia y distrito
+se actualizarán automáticamente según tu selección.
+</p>
+
+
+<div class="question">
+
+<label>
+DEPARTAMENTO <span class="required">*</span>
+</label>
+
+<select
+id="departamento"
+required
+onchange="cargarProvincias()">
+
+<option value="">Cargando departamentos...</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+PROVINCIA <span class="required">*</span>
+</label>
+
+<select
+id="provincia"
+required
+disabled
+onchange="cargarDistritos()">
+
+<option value="">Primero selecciona departamento</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+DISTRITO <span class="required">*</span>
+</label>
+
+<select
+id="distrito"
+required
+disabled>
+
+<option value="">Primero selecciona provincia</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+DIRECCIÓN COMPLETA <span class="required">*</span>
+</label>
+
+<textarea
+id="direccion"
+required
+placeholder="Ejemplo: Av. Los Cipreses 140, Santa Anita"></textarea>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(1)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(2)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CONTACTO ================= -->
+
+<section id="seccion3" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+DATOS DE CONTACTO
+</h2>
+
+
+<div class="question">
+
+<label>
+NÚMERO PARA LLAMADAS
+<span class="required">*</span>
+</label>
+
+<input
+type="tel"
+id="telefono"
+required
+placeholder="Ejemplo: 999999999">
+
+</div>
+
+
+<div class="question">
+
+<label>
+NÚMERO DE WHATSAPP
+<span class="required">*</span>
+</label>
+
+<input
+type="tel"
+id="whatsapp"
+required
+placeholder="Ejemplo: 999999999">
+
+</div>
+
+
+<div class="question">
+
+<label>
+CORREO ELECTRÓNICO ACTUALIZADO
+<span class="required">*</span>
+</label>
+
+<input
+type="email"
+id="correo"
+required
+placeholder="ejemplo@correo.com">
+
+</div>
+
+
+<div class="question">
+
+<label>
+NÚMERO DE EMERGENCIA
+<span class="required">*</span>
+</label>
+
+<input
+type="tel"
+id="emergencia"
+required
+placeholder="Número de contacto">
+
+<div class="help">
+Debe corresponder a una persona de confianza:
+familiar, amigo/a o pareja.
+</div>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(2)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(3)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FORMACION ================= -->
+
+<section id="seccion4" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+FORMACIÓN ACADÉMICA
+</h2>
+
+
+<div class="question">
+
+<label>
+NIVEL EDUCATIVO ALCANZADO
+<span class="required">*</span>
+</label>
+
+<select id="nivelEducativo" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SECUNDARIA COMPLETA</option>
+
+<option>TÉCNICA EN CURSO</option>
+
+<option>TÉCNICA COMPLETA</option>
+
+<option>UNIVERSITARIO EN CURSO</option>
+
+<option>UNIVERSITARIO COMPLETO</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(3)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(4)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= EXPERIENCIA ================= -->
+
+<section id="seccion5" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+EXPERIENCIA LABORAL
+</h2>
+
+
+<div class="question">
+
+<label>
+¿TIENES EXPERIENCIA EN CALL CENTER?
+<span class="required">*</span>
+</label>
+
+<select
+id="experienciaCallCenter"
+required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+DETALLA TU ÚLTIMA EXPERIENCIA LABORAL
+<span class="required">*</span>
+</label>
+
+<textarea
+id="ultimaExperiencia"
+required
+placeholder="Cuéntanos brevemente sobre tu última experiencia laboral..."></textarea>
+
+<div class="help">
+
+Puedes incluir experiencias laborales formales o informales,
+el puesto desempeñado, empresa o actividad realizada
+y tiempo aproximado.
+
+</div>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(4)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(5)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PROCESOS INTERNOS ================= -->
+
+<section id="seccion6" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+PROCESOS INTERNOS
+</h2>
+
+
+<div class="question">
+
+<label>
+¿HAS TRABAJADO ANTERIORMENTE EN PARTNER?
+<span class="required">*</span>
+</label>
+
+<select id="trabajoAnteriorPartner" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+¿TE ENCUENTRAS ACTUALMENTE EN ALGÚN PROCESO DE SELECCIÓN
+O CAPACITACIÓN EN PARTNER?
+<span class="required">*</span>
+</label>
+
+<select id="procesoActualPartner" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+<div class="help">
+
+No consideres el proceso de postulación que estás realizando
+mediante este formulario.
+
+</div>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(5)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(6)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PUESTO ================= -->
+
+<section id="seccion7" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+REFERENCIAS DEL PUESTO AL QUE POSTULA
+</h2>
+
+
+<div class="question">
+
+<label>
+CAMPAÑA A LA QUE POSTULA
+<span class="required">*</span>
+</label>
+
+<select id="campana" required>
+
+<option value="">Selecciona una campaña</option>
+
+<option>MIGRACIONES</option>
+
+<option>PORTABILIDAD POSTPAGO</option>
+
+<option>PORTABILIDAD PREPAGO</option>
+
+<option>ATENCIÓN AL CLIENTE</option>
+
+<option>HOGAR OUTBOUND</option>
+
+<option>RENOVACIÓN OUTBOUND</option>
+
+<option>RENOVACIONES DIGITALES</option>
+
+<option>MULTICANAL</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+MODALIDAD DE GESTIÓN
+<span class="required">*</span>
+</label>
+
+<select id="modalidad" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>PRESENCIAL</option>
+
+<option>REMOTO</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+TURNO DISPONIBLE
+<span class="required">*</span>
+</label>
+
+<select
+id="turno"
+required
+onchange="cargarHorarios()">
+
+<option value="">Selecciona una opción</option>
+
+<option>FULL TIME</option>
+
+<option>SEMI FULL</option>
+
+<option>PART TIME</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+HORARIO DE TRABAJO
+<span class="required">*</span>
+</label>
+
+<select
+id="horario"
+required
+disabled>
+
+<option value="">
+Primero selecciona tu turno
+</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(6)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="siguiente(7)">
+CONTINUAR
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= BIENESTAR ================= -->
+
+<section id="seccion8" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+EN PARTNER SERVICE NOS PREOCUPAMOS POR TU BIENESTAR
+</h2>
+
+<p class="section-description">
+
+La siguiente información será utilizada exclusivamente cuando
+resulte necesaria para identificar requerimientos de accesibilidad,
+prevención de riesgos o condiciones que deban ser consideradas
+durante el proceso de incorporación.
+
+El tratamiento de información relacionada con la salud se realizará
+de acuerdo con la normativa aplicable sobre protección de datos
+personales.
+
+</p>
+
+
+<!-- DISCAPACIDAD -->
+
+<div class="question">
+
+<label>
+¿CUENTAS CON ALGUNA DISCAPACIDAD?
+<span class="required">*</span>
+</label>
+
+<select
+id="discapacidad"
+required
+onchange="mostrarDetalle(this,'detalleDiscapacidad')">
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+<div
+id="detalleDiscapacidad"
+class="question hidden">
+
+<label>
+DETALLA TU DISCAPACIDAD
+</label>
+
+<textarea
+id="detalleDiscapacidadTexto"
+placeholder="Indica el detalle correspondiente"></textarea>
+
+</div>
+
+
+
+<!-- CONADIS -->
+
+<div class="question">
+
+<label>
+¿CUENTAS CON CARNET DE CONADIS?
+<span class="required">*</span>
+</label>
+
+<select id="carnetConadis" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+
+<!-- CONDICIONES -->
+
+<div class="question">
+
+<label>
+SI CUENTAS CON ALGUNA DE LAS SIGUIENTES CONDICIONES MÉDICAS,
+MARCA LAS QUE CORRESPONDAN
+</label>
+
+<div class="help">
+Puedes seleccionar más de una opción.
+</div>
+
+<br>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Hipertensión arterial">
+Hipertensión arterial
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Diabetes">
+Diabetes
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Asma">
+Asma
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Enfermedades cardiovasculares">
+Enfermedades cardiovasculares
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Enfermedades respiratorias">
+Enfermedades respiratorias
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Obesidad">
+Obesidad
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Enfermedad renal">
+Enfermedad renal
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Enfermedad hepática">
+Enfermedad hepática
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Cáncer">
+Cáncer
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Inmunosupresión">
+Inmunosupresión
+</label>
+
+<label>
+<input type="checkbox"
+name="condicion"
+value="Otra condición">
+Otra condición
+</label>
+
+</div>
+
+
+
+<!-- MEDICACION -->
+
+<div class="question">
+
+<label>
+¿UTILIZAS ALGUNA MEDICACIÓN?
+<span class="required">*</span>
+</label>
+
+<select
+id="medicacion"
+required
+onchange="mostrarDetalle(this,'detalleMedicacion')">
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+<div
+id="detalleMedicacion"
+class="question hidden">
+
+<label>
+DETALLA LA MEDICACIÓN QUE UTILIZAS
+</label>
+
+<textarea
+id="detalleMedicacionTexto"></textarea>
+
+</div>
+
+
+
+<!-- GESTACIÓN -->
+
+<div
+id="preguntaGestante"
+class="question hidden">
+
+<label>
+¿ERES GESTANTE?
+<span class="required">*</span>
+</label>
+
+<select
+id="gestante"
+onchange="mostrarDetalle(this,'detalleGestacion')">
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+<div
+id="detalleGestacion"
+class="question hidden">
+
+<label>
+SI ERES GESTANTE, DETALLA SI ACTUALMENTE ESTÁS TOMANDO
+ALGÚN MEDICAMENTO Y ESPECIFICA CUÁL
+</label>
+
+<textarea
+id="detalleMedicacionGestacion"></textarea>
+
+</div>
+
+
+
+<!-- HIJOS -->
+
+<div class="question">
+
+<label>
+¿TIENES HIJOS MENORES DE 2 AÑOS?
+<span class="required">*</span>
+</label>
+
+<select id="hijosMenores2" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+
+<!-- TRATAMIENTO PSICOLOGICO -->
+
+<div class="question">
+
+<label>
+¿TE ENCUENTRAS CON ALGÚN TRATAMIENTO PSICOLÓGICO?
+<span class="required">*</span>
+</label>
+
+<select
+id="tratamientoPsicologico"
+required>
+
+<option value="">Selecciona una opción</option>
+
+<option>SI</option>
+
+<option>NO</option>
+
+</select>
+
+</div>
+
+
+
+<!-- DIAGNOSTICO -->
+
+<div class="question">
+
+<label>
+¿QUÉ DIAGNÓSTICO PSICOLÓGICO TIENES?
+<span class="required">*</span>
+</label>
+
+<select
+id="diagnosticoPsicologico"
+required
+onchange="controlarDiagnostico()">
+
+<option value="">Selecciona una opción</option>
+
+<option>NO TENGO DIAGNÓSTICO PSICOLÓGICO</option>
+
+<option>DEPRESIÓN</option>
+
+<option>ANSIEDAD</option>
+
+<option>ESQUIZOFRENIA</option>
+
+<option>ALZHEIMER</option>
+
+<option>OTROS</option>
+
+</select>
+
+</div>
+
+
+<div
+id="otroDiagnosticoBox"
+class="question hidden">
+
+<label>
+ESPECIFICA EL DIAGNÓSTICO
+</label>
+
+<textarea id="otroDiagnostico"></textarea>
+
+</div>
+
+
+
+<!-- MEDICAMENTO PSICOLOGICO -->
+
+<div class="question">
+
+<label>
+DETALLE EL MEDICAMENTO UTILIZADO EN SU TRATAMIENTO PSICOLÓGICO
+</label>
+
+<textarea
+id="medicamentoTratamientoPsicologico"></textarea>
+
+</div>
+
+
+
+<!-- DECLARACION -->
+
+<div class="warning-box">
+
+<strong>DECLARACIÓN</strong>
+
+<br><br>
+
+Declaro que la información brindada es verdadera y acepto que
+sea utilizada para los fines pertinentes y de evaluación.
+Asimismo, acepto que proporcionar información falsa u omitir
+información de manera intencional podrá excluirme del proceso
+de postulación, selección y capacitación.
+
+</div>
+
+
+<div class="question">
+
+<label>
+DECLARO Y AUTORIZO
+<span class="required">*</span>
+</label>
+
+<select id="declaracion" required>
+
+<option value="">Selecciona una opción</option>
+
+<option>ACEPTO Y AUTORIZO</option>
+
+<option>NO ACEPTO</option>
+
+</select>
+
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-secondary"
+onclick="mostrarSeccion(7)">
+ATRÁS
+</button>
+
+<button
+class="btn-primary"
+onclick="enviarFormulario()">
+ENVIAR POSTULACIÓN
+</button>
+
+</div>
+
+
+<div
+id="spinner"
+class="spinner">
+
+⏳ Enviando tu postulación...
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ÉXITO ================= -->
+
+<section
+id="exito"
+class="section">
+
+<div class="content success">
+
+<h2>
+¡POSTULACIÓN REGISTRADA!
+</h2>
+
+<p>
+Gracias por completar tu formulario de postulación a
+<strong>Partner Service</strong>.
+</p>
+
+<p>
+Nuestro equipo de Reclutamiento y Selección revisará
+la información proporcionada y se pondrá en contacto
+contigo de corresponder.
+</p>
+
+</div>
+
+</section>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let ubicacion = {};
+
+let seccionActual = 0;
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbx-4EzNoeGLrYuKgMiD7Jsd6bzIgsCpD-eMBtIeL96fY9MTu-Dte9sna8hFkqL66uw/exec';
+
+const UBIGEO_URLS = {
+  departamentos: 'https://raw.githubusercontent.com/RitchieRD/ubigeos-peru-data/main/json/1_ubigeo_departamentos.json',
+  provincias: 'https://raw.githubusercontent.com/RitchieRD/ubigeos-peru-data/main/json/2_ubigeo_provincias.json',
+  distritos: 'https://raw.githubusercontent.com/RitchieRD/ubigeos-peru-data/main/json/3_ubigeo_distritos.json'
+};
+
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const respuestas = await Promise.all([
+      fetch(UBIGEO_URLS.departamentos),
+      fetch(UBIGEO_URLS.provincias),
+      fetch(UBIGEO_URLS.distritos)
+    ]);
+
+    if (respuestas.some(r => !r.ok)) {
+      throw new Error('No se pudo descargar uno de los catálogos de ubicación.');
+    }
+
+    const [depData, provData, distData] = await Promise.all(
+      respuestas.map(r => r.json())
+    );
+
+    ubicacion = {
+      departamentos: (depData.ubigeo_departamentos || []).map(item => ({
+        id: String(item.id),
+        nombre: String(item.departamento),
+        ubigeo: String(item.ubigeo)
+      })),
+      provincias: (provData.ubigeo_provincias || []).map(item => ({
+        id: String(item.id),
+        nombre: String(item.nombre),
+        ubigeo: String(item.ubigeo),
+        departamento_id: String(item.departamento_id)
+      })),
+      distritos: (distData.ubigeo_distritos || []).map(item => ({
+        id: String(item.id),
+        nombre: String(item.nombre),
+        ubigeo: String(item.ubigeo),
+        provincia_id: String(item.nombre_id),
+        departamento_id: String(item.departamento_id)
+      }))
+    };
+
+    cargarDepartamentos();
+  } catch (error) {
+    console.error('ERROR AL CARGAR UBIGEO:', error);
+    const select = document.getElementById('departamento');
+    if (select) {
+      select.innerHTML = '<option value=\"\">No se pudo cargar la ubicación</option>';
+    }
+    alert('No se pudo cargar el listado de departamentos, provincias y distritos. Recarga la página e inténtalo nuevamente.');
+  }
+});
+
+
+/* =====================================================
+   NAVEGACION
+===================================================== */
+
+function mostrarSeccion(numero) {
+
+  document
+    .querySelectorAll('.section')
+    .forEach(
+      section => section.classList.remove('active')
+    );
+
+  if(numero === 0) {
+
+    document
+      .getElementById('portada')
+      .classList.add('active');
+
+  } else {
+
+    document
+      .getElementById('seccion' + numero)
+      .classList.add('active');
+
+  }
+
+  seccionActual = numero;
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+
+function siguiente(numero) {
+
+  if(!validarSeccion(numero)) {
+
+    return;
+
+  }
+
+  mostrarSeccion(numero + 1);
+
+}
+
+
+/* =====================================================
+   VALIDACION
+===================================================== */
+
+function validarSeccion(numero) {
+
+  const seccion =
+    document.getElementById(
+      'seccion' + numero
+    );
+
+  const campos =
+    seccion.querySelectorAll(
+      'input, select, textarea'
+    );
+
+  for(let campo of campos) {
+
+    if(
+      campo.required &&
+      !campo.value.trim()
+    ) {
+
+      campo.reportValidity();
+
+      return false;
+
+    }
+
+  }
+
+  return true;
+
+}
+
+
+
+/* =====================================================
+   EDAD
+===================================================== */
+
+function calcularEdad() {
+
+  const fecha =
+    document.getElementById(
+      'fechaNacimiento'
+    ).value;
+
+  if(!fecha) return;
+
+  const nacimiento =
+    new Date(fecha);
+
+  const hoy =
+    new Date();
+
+  let edad =
+    hoy.getFullYear()
+    -
+    nacimiento.getFullYear();
+
+  const mes =
+    hoy.getMonth()
+    -
+    nacimiento.getMonth();
+
+  if(
+    mes < 0 ||
+    (
+      mes === 0 &&
+      hoy.getDate() < nacimiento.getDate()
+    )
+  ) {
+
+    edad--;
+
+  }
+
+  document
+    .getElementById('edad')
+    .value = edad;
+
+}
+
+
+
+/* =====================================================
+   SEXO
+===================================================== */
+
+function controlarSexo() {
+
+  const sexo =
+    document
+      .getElementById('sexo')
+      .value;
+
+  const caja =
+    document
+      .getElementById('preguntaGestante');
+
+  const gestante =
+    document
+      .getElementById('gestante');
+
+  if(sexo === 'FEMENINO') {
+
+    caja.classList.remove('hidden');
+
+    gestante.required = true;
+
+  } else {
+
+    caja.classList.add('hidden');
+
+    gestante.required = false;
+
+    gestante.value = '';
+
+    document
+      .getElementById('detalleGestacion')
+      .classList.add('hidden');
+
+    document
+      .getElementById('detalleMedicacionGestacion')
+      .value = '';
+
+  }
+
+}
+
+
+
+/* =====================================================
+   UBIGEO
+===================================================== */
+
+function cargarDepartamentos() {
+
+  const select =
+    document
+      .getElementById('departamento');
+
+  select.innerHTML =
+    '<option value="">Selecciona tu departamento</option>';
+
+  ubicacion.departamentos.forEach(
+    departamento => {
+
+      const option =
+        document.createElement('option');
+
+      option.value =
+        departamento.id;
+
+      option.textContent =
+        departamento.nombre;
+
+      select.appendChild(option);
+
+    }
+  );
+
+}
+
+
+function cargarProvincias() {
+
+  const departamentoId =
+    document
+      .getElementById('departamento')
+      .value;
+
+  const provincia =
+    document
+      .getElementById('provincia');
+
+  const distrito =
+    document
+      .getElementById('distrito');
+
+  provincia.innerHTML =
+    '<option value="">Selecciona tu provincia</option>';
+
+  distrito.innerHTML =
+    '<option value="">Primero selecciona provincia</option>';
+
+  provincia.disabled = true;
+
+  distrito.disabled = true;
+
+  if(!departamentoId) return;
+
+  const lista =
+    ubicacion.provincias
+      .filter(
+        item =>
+          String(item.departamento_id)
+          ===
+          String(departamentoId)
+      );
+
+  lista.forEach(
+    item => {
+
+      const option =
+        document.createElement('option');
+
+      option.value =
+        item.id;
+
+      option.textContent =
+        item.nombre;
+
+      provincia.appendChild(option);
+
+    }
+  );
+
+  provincia.disabled = false;
+
+}
+
+
+function cargarDistritos() {
+
+  const provinciaId =
+    document
+      .getElementById('provincia')
+      .value;
+
+  const distrito =
+    document
+      .getElementById('distrito');
+
+  distrito.innerHTML =
+    '<option value="">Selecciona tu distrito</option>';
+
+  distrito.disabled = true;
+
+  if(!provinciaId) return;
+
+  const lista =
+    ubicacion.distritos
+      .filter(
+        item =>
+          String(item.nombre_id)
+          ===
+          String(provinciaId)
+      );
+
+  lista.forEach(
+    item => {
+
+      const option =
+        document.createElement('option');
+
+      option.value =
+        item.id;
+
+      option.textContent =
+        item.nombre;
+
+      distrito.appendChild(option);
+
+    }
+  );
+
+  distrito.disabled = false;
+
+}
+
+
+
+/* =====================================================
+   HORARIOS
+===================================================== */
+
+function cargarHorarios() {
+
+  const turno =
+    document
+      .getElementById('turno')
+      .value;
+
+  const select =
+    document
+      .getElementById('horario');
+
+  select.innerHTML =
+    '<option value="">Selecciona tu horario</option>';
+
+  select.disabled = true;
+
+  let horarios = [];
+
+  if(turno === 'FULL TIME') {
+
+    horarios =
+      generarHorarios(
+        7,
+        24,
+        9
+      );
+
+  }
+
+  if(turno === 'SEMI FULL') {
+
+    horarios =
+      generarHorarios(
+        9,
+        24,
+        6
+      );
+
+  }
+
+  if(turno === 'PART TIME') {
+
+    horarios =
+      generarHorarios(
+        15,
+        24,
+        4
+      );
+
+  }
+
+
+  horarios.forEach(
+    horario => {
+
+      const option =
+        document.createElement('option');
+
+      option.value =
+        horario;
+
+      option.textContent =
+        horario;
+
+      select.appendChild(option);
+
+    }
+  );
+
+  select.disabled = false;
+
+}
+
+
+function generarHorarios(
+  horaInicio,
+  horaFin,
+  duracion
+) {
+
+  const resultado = [];
+
+  for(
+    let inicio = horaInicio;
+    inicio + duracion <= horaFin;
+    inicio++
+  ) {
+
+    const fin =
+      inicio + duracion;
+
+    resultado.push(
+      formatearHora(inicio)
+      +
+      ' A '
+      +
+      formatearHora(fin)
+    );
+
+  }
+
+  return resultado;
+
+}
+
+
+function formatearHora(hora) {
+
+  let h = hora;
+
+  let sufijo = 'AM';
+
+  if(hora >= 12) {
+
+    sufijo = 'PM';
+
+  }
+
+  if(hora > 12) {
+
+    h = hora - 12;
+
+  }
+
+  if(hora === 0) {
+
+    h = 12;
+
+    sufijo = 'AM';
+
+  }
+
+  return (
+    String(h).padStart(2,'0')
+    +
+    ':00 '
+    +
+    sufijo
+  );
+
+}
+
+
+
+/* =====================================================
+   CONDICIONALES
+===================================================== */
+
+function mostrarDetalle(
+  select,
+  idCaja
+) {
+
+  const caja =
+    document.getElementById(idCaja);
+
+  if(select.value === 'SI') {
+
+    caja.classList.remove('hidden');
+
+  } else {
+
+    caja.classList.add('hidden');
+
+  }
+
+}
+
+
+function controlarDiagnostico() {
+
+  const valor =
+    document
+      .getElementById(
+        'diagnosticoPsicologico'
+      )
+      .value;
+
+  const caja =
+    document
+      .getElementById(
+        'otroDiagnosticoBox'
+      );
+
+  if(valor === 'OTROS') {
+
+    caja.classList.remove('hidden');
+
+  } else {
+
+    caja.classList.add('hidden');
+
+    document
+      .getElementById(
+        'otroDiagnostico'
+      )
+      .value = '';
+
+  }
+
+}
+
+
+
+/* =====================================================
+   CONDICIONES MEDICAS
+===================================================== */
+
+function obtenerCondiciones() {
+
+  const seleccionadas =
+    [];
+
+  document
+    .querySelectorAll(
+      'input[name="condicion"]:checked'
+    )
+    .forEach(
+      checkbox => {
+
+        seleccionadas.push(
+          checkbox.value
+        );
+
+      }
+    );
+
+  return seleccionadas.join(', ');
+
+}
+
+
+
+/* =====================================================
+   ENVIAR FORMULARIO
+===================================================== */
+
+function enviarFormulario() {
+
+  if(!validarSeccion(8)) {
+
+    return;
+
+  }
+
+
+  const declaracion =
+    document
+      .getElementById(
+        'declaracion'
+      )
+      .value;
+
+  if(
+    declaracion !==
+    'ACEPTO Y AUTORIZO'
+  ) {
+
+    alert(
+      'Para enviar la postulación debes aceptar y autorizar la declaración.'
+    );
+
+    return;
+
+  }
+
+
+  const datos = {
+
+    tipoDocumento:
+      valor('tipoDocumento'),
+
+    numeroDocumento:
+      valor('numeroDocumento'),
+
+    nombres:
+      valor('nombres'),
+
+    fechaNacimiento:
+      valor('fechaNacimiento'),
+
+    edad:
+      valor('edad'),
+
+    sexo:
+      valor('sexo'),
+
+
+    departamento:
+      textoSeleccionado('departamento'),
+
+    provincia:
+      textoSeleccionado('provincia'),
+
+    distrito:
+      textoSeleccionado('distrito'),
+
+    direccion:
+      valor('direccion'),
+
+
+    telefono:
+      valor('telefono'),
+
+    whatsapp:
+      valor('whatsapp'),
+
+    correo:
+      valor('correo'),
+
+    emergencia:
+      valor('emergencia'),
+
+
+    nivelEducativo:
+      valor('nivelEducativo'),
+
+
+    experienciaCallCenter:
+      valor('experienciaCallCenter'),
+
+    ultimaExperiencia:
+      valor('ultimaExperiencia'),
+
+
+    trabajoAnteriorPartner:
+      valor('trabajoAnteriorPartner'),
+
+    procesoActualPartner:
+      valor('procesoActualPartner'),
+
+
+    campana:
+      valor('campana'),
+
+    modalidad:
+      valor('modalidad'),
+
+    turno:
+      valor('turno'),
+
+    horario:
+      valor('horario'),
+
+
+    discapacidad:
+      valor('discapacidad'),
+
+    detalleDiscapacidad:
+      valor('detalleDiscapacidadTexto'),
+
+    carnetConadis:
+      valor('carnetConadis'),
+
+
+    condicionesMedicas:
+      obtenerCondiciones(),
+
+
+    medicacion:
+      valor('medicacion'),
+
+    detalleMedicacion:
+      valor('detalleMedicacionTexto'),
+
+
+    gestante:
+      valor('gestante'),
+
+    detalleMedicacionGestacion:
+      valor(
+        'detalleMedicacionGestacion'
+      ),
+
+
+    hijosMenores2:
+      valor('hijosMenores2'),
+
+
+    tratamientoPsicologico:
+      valor(
+        'tratamientoPsicologico'
+      ),
+
+    diagnosticoPsicologico:
+      valor(
+        'diagnosticoPsicologico'
+      ),
+
+    otroDiagnostico:
+      valor(
+        'otroDiagnostico'
+      ),
+
+    medicamentoTratamientoPsicologico:
+      valor(
+        'medicamentoTratamientoPsicologico'
+      ),
+
+
+    declaracion:
+      declaracion
+
+  };
+
+
+  document
+    .getElementById(
+      'spinner'
+    )
+    .style.display =
+    'block';
+
+
+  fetch(BACKEND_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'text/plain;charset=UTF-8'
+    },
+    body: JSON.stringify(datos),
+    keepalive: true
+  })
+  .then(function() {
+    document
+      .getElementById('spinner')
+      .style.display = 'none';
+
+    mostrarExito();
+  })
+  .catch(function(error) {
+    document
+      .getElementById('spinner')
+      .style.display = 'none';
+
+    console.error('ERROR ENVIANDO POSTULACIÓN:', error);
+
+    alert('No se pudo enviar la postulación. Revisa tu conexión e inténtalo nuevamente.');
+  });
+
+}
+
+
+
+/* =====================================================
+   FUNCIONES AUXILIARES
+===================================================== */
+
+function valor(id) {
+
+  const elemento =
+    document.getElementById(id);
+
+  return elemento
+    ? elemento.value.trim()
+    : '';
+
+}
+
+
+function textoSeleccionado(id) {
+
+  const elemento =
+    document.getElementById(id);
+
+  if(!elemento) return '';
+
+  if(
+    elemento.selectedIndex < 0
+  ) {
+
+    return '';
+
+  }
+
+  return elemento.options[
+    elemento.selectedIndex
+  ].text;
+
+}
+
+
+function mostrarExito() {
+
+  document
+    .querySelectorAll('.section')
+    .forEach(
+      section =>
+        section.classList.remove('active')
+    );
+
+  document
+    .getElementById('exito')
+    .classList.add('active');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+</script>
+
+</body>
+
+</html>
