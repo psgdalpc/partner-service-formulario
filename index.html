@@ -1107,100 +1107,89 @@ placeholder="Indica el detalle correspondiente"></textarea>
 
 
 
-<!-- CONDICIONES -->
+<!-- CONDICIONES MÉDICAS -->
 
 <div class="question">
 
 <label>
 SI CUENTAS CON ALGUNA DE LAS SIGUIENTES CONDICIONES MÉDICAS,
-MARCA LAS QUE CORRESPONDAN
+SELECCIONA LA QUE CORRESPONDA
+<span class="required">*</span>
 </label>
 
-<div class="help">
-Puedes seleccionar más de una opción.
-</div>
+<select
+  id="condicionesMedicas"
+  required
+  onchange="controlarCondicionesMedicas()">
 
-<br>
+<option value="">Selecciona una opción</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Hipertensión arterial">
-Hipertensión arterial
-</label>
+<option value="NO CUENTO CON NINGUNA">
+NO CUENTO CON NINGUNA
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Diabetes">
-Diabetes
-</label>
+<option value="HIPERTENSIÓN ARTERIAL">
+HIPERTENSIÓN ARTERIAL
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Asma">
-Asma
-</label>
+<option value="DIABETES">
+DIABETES
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Enfermedades cardiovasculares">
-Enfermedades cardiovasculares
-</label>
+<option value="ASMA">
+ASMA
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Enfermedades respiratorias">
-Enfermedades respiratorias
-</label>
+<option value="ENFERMEDADES CARDIOVASCULARES">
+ENFERMEDADES CARDIOVASCULARES
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Obesidad">
-Obesidad
-</label>
+<option value="ENFERMEDADES RESPIRATORIAS">
+ENFERMEDADES RESPIRATORIAS
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Enfermedad renal">
-Enfermedad renal
-</label>
+<option value="OBESIDAD">
+OBESIDAD
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Enfermedad hepática">
-Enfermedad hepática
-</label>
+<option value="ENFERMEDAD RENAL">
+ENFERMEDAD RENAL
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Cáncer">
-Cáncer
-</label>
+<option value="ENFERMEDAD HEPÁTICA">
+ENFERMEDAD HEPÁTICA
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Inmunosupresión">
-Inmunosupresión
-</label>
+<option value="CÁNCER">
+CÁNCER
+</option>
 
-<label>
-<input type="checkbox"
-name="condicion"
-value="Otra condición">
-Otra condición
-</label>
+<option value="INMUNOSUPRESIÓN">
+INMUNOSUPRESIÓN
+</option>
+
+<option value="OTRA CONDICIÓN MÉDICA">
+OTRA CONDICIÓN MÉDICA
+</option>
+
+</select>
 
 </div>
 
+<div
+  id="detalleCondicionMedicaBox"
+  class="question hidden">
+
+<label>
+DETALLA LA OTRA CONDICIÓN MÉDICA
+<span class="required">*</span>
+</label>
+
+<textarea
+  id="detalleCondicionMedica"
+  placeholder="Indica qué condición médica tienes"></textarea>
+
+</div>
 
 
 <!-- MEDICACION -->
@@ -1246,8 +1235,8 @@ id="detalleMedicacionTexto"></textarea>
 <!-- GESTACIÓN -->
 
 <div
-id="preguntaGestante"
-class="question hidden">
+  id="preguntaGestante"
+  class="question hidden">
 
 <label>
 ¿ERES GESTANTE?
@@ -1255,8 +1244,9 @@ class="question hidden">
 </label>
 
 <select
-id="gestante"
-onchange="mostrarDetalle(this,'detalleGestacion')">
+  id="gestante"
+  required
+  onchange="controlarGestacion()">
 
 <option value="">Selecciona una opción</option>
 
@@ -1268,10 +1258,26 @@ onchange="mostrarDetalle(this,'detalleGestacion')">
 
 </div>
 
+<div
+  id="tiempoGestacionBox"
+  class="question hidden">
+
+<label>
+¿CUÁNTO TIEMPO DE GESTACIÓN TIENES?
+<span class="required">*</span>
+</label>
+
+<input
+  type="text"
+  id="tiempoGestacion"
+  placeholder="Ejemplo: 12 semanas o 3 meses"
+  autocomplete="off">
+
+</div>
 
 <div
-id="detalleGestacion"
-class="question hidden">
+  id="detalleGestacion"
+  class="question hidden">
 
 <label>
 SI ERES GESTANTE, DETALLA SI ACTUALMENTE ESTÁS TOMANDO
@@ -1279,10 +1285,9 @@ ALGÚN MEDICAMENTO Y ESPECIFICA CUÁL
 </label>
 
 <textarea
-id="detalleMedicacionGestacion"></textarea>
+  id="detalleMedicacionGestacion"></textarea>
 
 </div>
-
 
 
 <!-- HIJOS -->
@@ -1724,27 +1729,112 @@ function controlarSexo() {
     document
       .getElementById('gestante');
 
+  const tiempoBox =
+    document
+      .getElementById('tiempoGestacionBox');
+
+  const tiempo =
+    document
+      .getElementById('tiempoGestacion');
+
+  const detalleBox =
+    document
+      .getElementById('detalleGestacion');
+
+  const detalleMedicacion =
+    document
+      .getElementById('detalleMedicacionGestacion');
+
   if(sexo === 'FEMENINO') {
 
     caja.classList.remove('hidden');
-
     gestante.required = true;
 
   } else {
 
     caja.classList.add('hidden');
-
     gestante.required = false;
-
     gestante.value = '';
 
-    document
-      .getElementById('detalleGestacion')
-      .classList.add('hidden');
+    tiempoBox.classList.add('hidden');
+    tiempo.required = false;
+    tiempo.value = '';
 
+    detalleBox.classList.add('hidden');
+    detalleMedicacion.value = '';
+
+  }
+
+}
+
+
+function controlarGestacion() {
+
+  const gestante =
+    document
+      .getElementById('gestante')
+      .value;
+
+  const tiempoBox =
+    document
+      .getElementById('tiempoGestacionBox');
+
+  const tiempo =
+    document
+      .getElementById('tiempoGestacion');
+
+  const detalleBox =
+    document
+      .getElementById('detalleGestacion');
+
+  if(gestante === 'SI') {
+
+    tiempoBox.classList.remove('hidden');
+    tiempo.required = true;
+
+    detalleBox.classList.remove('hidden');
+
+  } else {
+
+    tiempoBox.classList.add('hidden');
+    tiempo.required = false;
+    tiempo.value = '';
+
+    detalleBox.classList.add('hidden');
     document
       .getElementById('detalleMedicacionGestacion')
       .value = '';
+
+  }
+
+}
+
+
+function controlarCondicionesMedicas() {
+
+  const valor =
+    document
+      .getElementById('condicionesMedicas')
+      .value;
+
+  const box =
+    document
+      .getElementById('detalleCondicionMedicaBox');
+
+  const detalle =
+    document
+      .getElementById('detalleCondicionMedica');
+
+  if(valor === 'OTRA CONDICIÓN MÉDICA') {
+
+    box.classList.remove('hidden');
+    detalle.required = true;
+
+  } else {
+
+    box.classList.add('hidden');
+    detalle.required = false;
+    detalle.value = '';
 
   }
 
@@ -2111,24 +2201,24 @@ function controlarDiagnostico() {
 
 function obtenerCondiciones() {
 
-  const seleccionadas =
-    [];
+  const seleccion =
+    document
+      .getElementById('condicionesMedicas')
+      .value;
 
-  document
-    .querySelectorAll(
-      'input[name="condicion"]:checked'
-    )
-    .forEach(
-      checkbox => {
+  const detalle =
+    document
+      .getElementById('detalleCondicionMedica')
+      .value
+      .trim();
 
-        seleccionadas.push(
-          checkbox.value
-        );
+  if(seleccion === 'OTRA CONDICIÓN MÉDICA') {
+    return detalle
+      ? 'OTRA CONDICIÓN MÉDICA: ' + detalle
+      : 'OTRA CONDICIÓN MÉDICA';
+  }
 
-      }
-    );
-
-  return seleccionadas.join(', ');
+  return seleccion;
 
 }
 
@@ -2269,6 +2359,9 @@ function enviarFormulario() {
 
     gestante:
       valor('gestante'),
+
+    tiempoGestacion:
+      valor('tiempoGestacion'),
 
     detalleMedicacionGestacion:
       valor(
