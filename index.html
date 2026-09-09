@@ -1295,11 +1295,14 @@ ALGÚN MEDICAMENTO Y ESPECIFICA CUÁL
 <div class="question">
 
 <label>
-¿TIENES HIJOS MENORES DE 2 AÑOS?
+¿TIENES HIJOS?
 <span class="required">*</span>
 </label>
 
-<select id="hijosMenores2" required>
+<select
+  id="tieneHijos"
+  required
+  onchange="controlarHijos()">
 
 <option value="">Selecciona una opción</option>
 
@@ -1308,6 +1311,48 @@ ALGÚN MEDICAMENTO Y ESPECIFICA CUÁL
 <option>NO</option>
 
 </select>
+
+</div>
+
+
+<div
+  id="cantidadHijosBox"
+  class="question hidden">
+
+<label>
+¿CUÁNTOS HIJOS TIENES?
+<span class="required">*</span>
+</label>
+
+<input
+  type="number"
+  id="cantidadHijos"
+  min="1"
+  max="30"
+  placeholder="Ingresa la cantidad de hijos"
+  autocomplete="off">
+
+</div>
+
+
+<div
+  id="edadesHijosBox"
+  class="question hidden">
+
+<label>
+¿QUÉ EDAD(ES) TIENEN TUS HIJOS?
+<span class="required">*</span>
+</label>
+
+<input
+  type="text"
+  id="edadesHijos"
+  placeholder="Ejemplo: 2 años, 5 años y 8 años"
+  autocomplete="off">
+
+<div class="help">
+Indica la edad de cada uno de tus hijos.
+</div>
 
 </div>
 
@@ -2160,6 +2205,63 @@ function mostrarDetalle(
 }
 
 
+function controlarHijos() {
+
+  const tieneHijos =
+    document
+      .getElementById('tieneHijos')
+      .value;
+
+
+  const cantidadBox =
+    document
+      .getElementById('cantidadHijosBox');
+
+
+  const cantidad =
+    document
+      .getElementById('cantidadHijos');
+
+
+  const edadesBox =
+    document
+      .getElementById('edadesHijosBox');
+
+
+  const edades =
+    document
+      .getElementById('edadesHijos');
+
+
+  if (tieneHijos === 'SI') {
+
+    cantidadBox.classList.remove('hidden');
+
+    edadesBox.classList.remove('hidden');
+
+    cantidad.required = true;
+
+    edades.required = true;
+
+  } else {
+
+    cantidadBox.classList.add('hidden');
+
+    edadesBox.classList.add('hidden');
+
+    cantidad.required = false;
+
+    edades.required = false;
+
+    cantidad.value = '';
+
+    edades.value = '';
+
+  }
+
+}
+
+
 function controlarDiagnostico() {
 
   const valor =
@@ -2369,8 +2471,14 @@ function enviarFormulario() {
       ),
 
 
-    hijosMenores2:
-      valor('hijosMenores2'),
+    tieneHijos:
+  valor('tieneHijos'),
+
+cantidadHijos:
+  valor('cantidadHijos'),
+
+edadesHijos:
+  valor('edadesHijos'),
 
 
     tratamientoPsicologico:
